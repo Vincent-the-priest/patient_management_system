@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View, Edit, Deactivate</title>
+    <style>
+        /* Add your styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <nav>
+        <ul>
+            <center><li><a href="home.php">Home</a></li></center>
+        </ul>
+    </nav>
+<div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="hideConfirmationModal()">&times;</span>
+        <p>Are you sure you want to deactivate this item?</p>
+        <button id="confirm-deactivate" onclick="deactivateItem()">Deactivate</button>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="container">
+    <h1>Item Details</h1>
+    <button onclick="viewItem()">View</button>
+    <button onclick="editItem()">Edit</button>
+    <button onclick="showConfirmationModal()">Deactivate</button>
+</div>
+
+<script>
+    // Add your JavaScript code here
+function viewItem() {
+    alert("Viewing item details");
+}
+
+function editItem() {
+    alert("Editing item details");
+}
+
+function showConfirmationModal() {
+    var modal = document.getElementById("confirmation-modal");
+    modal.style.display = "block";
+}
+
+function hideConfirmationModal() {
+    var modal = document.getElementById("confirmation-modal");
+    modal.style.display = "none";
+}
+
+function deactivateItem() {
+    alert("Deactivating item");
+    hideConfirmationModal();
+}
+
+</script>
+</body>
+</html>
